@@ -1,0 +1,494 @@
+@use "../../utils/mixins";
+@use "../../utils/variables";
+
+.navbar {
+
+	display: flex;
+	justify-content: space-between;
+
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	background-color: transparent;
+	box-shadow: none;
+
+	min-height: 67px;
+
+	@include mixins.responsive(min, tablet) {
+		transition: background-color 200ms ease-out 200ms, box-shadow 200ms ease-out 200ms;
+	}
+	transition: background-color 200ms ease-out, box-shadow 200ms ease-out, all 200ms ease-out;
+
+	@include mixins.responsive(lg-desktop) {
+		width: 100%;
+		padding-top: 24px;
+		padding-left: 24px;
+	}
+	@include mixins.responsive(desktop) {
+		padding: 24px 35px;
+		width: 100%;
+	}
+	@include mixins.responsive(sm-laptop, laptop) {
+		padding: 1.5rem;
+		width: 100%;
+	}
+	@include mixins.responsive(mobile, tablet) {
+		padding: 1rem 1.5rem;
+		width: 100%;
+	}
+	@include mixins.responsive(sm-mobile) {
+		width: 100vw;
+		box-sizing: border-box;
+		padding: 1rem;
+		height: auto;
+	}
+
+	&__menu {
+		display: flex;
+		justify-content: space-between;
+		width: 450px;
+
+		@include mixins.responsive(sm-laptop, laptop) {
+			width: 375px;
+			margin-left: 15px;
+		}
+		@include mixins.responsive(min, tablet) {
+			display: none;
+		}
+	}
+
+	&__menu-item {
+		@include mixins.font("Inter", 500, 16px, 114%);
+		@include mixins.flex-center;
+		height: inherit;
+		flex-direction: row;
+		transform: translateZ(0);
+		backface-visibility: hidden;
+		position: relative;
+		cursor: pointer;
+		color: variables.$grey;
+
+		@include mixins.responsive(sm-laptop, laptop) {
+			font-size: 12px;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			left: 0;
+			right: 100%;
+			bottom: 0;
+			background: #289CC9;
+			height: 2px;
+			transition-property: right;
+			transition-duration: 0.3s;
+			transition-timing-function: ease-out;
+			
+		}
+
+		&:not(&--active):hover::before {
+			right: 0;
+		}
+
+		&:focus {
+			outline: 2px solid white;
+			outline-offset: 4px;
+		}
+
+		&--active {
+			border-bottom: #289CC9 solid 2px;
+			color: #289CC9;
+		}
+
+		& img {
+			height: 15px;
+		}
+
+		& a {
+			height: inherit;	
+		}
+
+	}
+
+	&__logo {
+		max-width: 250px;
+
+
+		@include mixins.responsive(sm-laptop, laptop) {
+			width: 110px;
+		}
+
+		@include mixins.responsive( mobile ) {
+			width: 150px;
+		}
+
+		@include mixins.responsive( min, sm-mobile ) {
+			width: 120px;
+		}
+
+		& img {
+			width: 100%;
+
+			
+		}
+
+		&:focus {
+			outline: 2px solid white;
+			outline-offset: 5px;
+		}
+	}
+
+	&__buttons {
+
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		@include mixins.responsive(min, tablet) {
+			display: none;
+		}
+
+		& > .btn {
+			margin-right: 1rem;
+			@include mixins.responsive(sm-laptop, laptop) {
+				margin-right: .5rem;
+				@include mixins.font("Inter", 600, 11px, 114%);
+			}
+		}
+	}
+
+	&__chevron {
+		&--service {
+			margin-left: 4px;
+		}
+	}
+
+	&__dropdown {
+
+		position: absolute;
+		top: 100%;
+		padding-top: .5rem;
+		transform: perspective(300px) rotateX(-20deg) translateY(2rem);
+		transition: all 250ms ease;
+		opacity: 0;
+		visibility: hidden;
+
+		&--flag {
+			transform: perspective(300px) rotateX(-40deg) translateY(1rem);
+		}
+	}
+
+	&__dropdown-item {
+		color: variables.$downriver;
+		@include mixins.font("Inter", 500, 0.875rem, 170%);
+		padding-left: .75rem;
+		transition: all 250ms ease;
+
+		&:hover {
+			color: variables.$denim-blue;
+			text-decoration-line: underline;
+			background-color: variables.$light-grey;
+		}
+
+		&--flag {
+			@extend .navbar__dropdown-item;
+			padding-left: 0;
+			&:hover {
+				background-color: variables.$light-grey;
+			}
+
+			&:focus {
+				background-color: variables.$light-grey;
+				outline: 0px solid transparent !important;
+				outline-offset: 0 !important;
+			}
+		}
+
+		&:focus {
+			outline: 2px solid variables.$curious-blue;
+			outline-offset: 4px;
+		}
+	}
+
+	&__dropdown-menu {
+
+		display: flex;
+		flex-direction: column;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+		
+		&--service {
+
+			padding: 1.125rem;
+			& > .navbar__dropdown-item {
+				padding-right: 5.5rem;
+			}
+			
+			& > .navbar__dropdown-item {
+				padding-top: 0.375rem;
+				padding-bottom: .375rem;
+			}
+
+		}
+
+		&--flag {
+
+			& > a {
+				line-height: 100%;
+				padding: 0.75rem;
+				background-color: white;
+
+				&:first-child {
+					border-top-left-radius: 8px;
+					border-top-right-radius: 8px;
+				}
+
+				&:last-child {
+					border-bottom-left-radius: 8px;
+					border-bottom-right-radius: 8px;
+				}
+			}
+		}
+	}
+
+	&--scroll {
+		background-color: rgba(255, 255, 255, 0.98);
+		transition: background-color 300ms ease-out, all 300ms ease-out;
+
+		@include mixins.responsive(sm-laptop, max){
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
+
+		& .navbar__menu-item {
+			& a, span {
+				color: variables.$curious-blue;
+			}
+
+			&::before {
+				background: variables.$curious-blue;
+			}
+
+			&:focus {
+				outline: 2px solid variables.$curious-blue;
+				outline-offset: 4px;
+			}
+
+			&--active {
+				border-bottom: variables.$curious-blue solid 2px;
+			}
+		}
+
+		& > .burger-menu {
+
+			& > span {
+				background-color: variables.$lynch;
+			}
+		}
+
+		& .navbar__logo {
+			&:focus {
+				outline: 2px solid variables.$curious-blue;
+			}
+		}
+
+		& .menu--lang {
+			&:focus {
+				outline: 2px solid variables.$curious-blue;
+			}
+		}
+	}
+}
+
+.navbar__dropdown--active {
+	transform: perspective(300px) rotateX(0deg) translateY(0);
+	opacity: 1;
+	visibility: visible;
+}
+
+.menu {
+	
+	display: flex;
+	cursor: pointer;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	&--dropdown {
+		@extend .menu;
+		&:hover {
+			& .navbar__dropdown {
+				transform: perspective(300px) rotateX(0deg) translateY(0);
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		&:focus {
+			& .navbar__dropdown {
+				transform: perspective(300px) rotateX(0deg) translateY(0);
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+	}
+
+	&--lang {
+		height: 100%;
+		&:focus {
+			outline: 2px solid white;
+			outline-offset: 5px;
+		}
+	}
+}
+
+.mobile-nav {
+	
+	z-index: 9;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	top: 83px;
+	width: 100%;
+	background: white;
+	overflow-y: scroll;
+	height: max-content;
+	max-height: calc(100% - 67px);
+	@include mixins.responsive( min, sm-mobile ) {
+		max-height: calc(100% - 58px );
+	}
+
+	&__menu {
+		width: 100%;
+		border-top: 1px solid variables.$mystic;
+	}
+
+	&__sub-menu {
+		width: calc(100% - 48px);
+		height: auto;
+		margin: 0px 24px;
+		border-bottom: 1px solid variables.$mystic;
+
+		&--hidden {
+			display: none;
+		}
+
+		&--shown {
+			display: block;
+		}
+	}
+
+	&__item {
+		@include mixins.font("Inter", 500, 18px, 133%);
+		height: 64px;
+		display: flex;
+		align-items: center;
+		padding-right: 1.5rem;
+
+		@include mixins.responsive( min, sm-mobile ) {
+			font-size: 14px;
+			height: 3rem;
+		}
+
+		&:not(:last-of-type) {
+			border-bottom: 1px solid variables.$mystic;
+		}
+
+
+		&:nth-of-type(6) > .mobile-nav__link {
+			@include mixins.font("Inter", 700, 18px, 133%);
+			color: variables.$downriver;
+			@include mixins.responsive( min, sm-mobile ) {
+				font-size: 14px;
+			}
+		}
+
+		&:nth-of-type(4) {
+			cursor: pointer;
+		}
+
+		&:last-of-type {
+			cursor: pointer;
+		}
+
+		&:nth-of-type(7) > .mobile-nav__link {
+			@include mixins.font("Inter", 700, 18px, 133%);
+			color: variables.$denim-blue;
+			@include mixins.responsive( min, sm-mobile ) {
+				font-size: 14px;
+			}
+		}
+
+		&--language {
+			
+			padding: 0 1.5rem;				
+			& > .mobile-nav__link {
+				padding: 0;
+			}
+		}
+	}
+
+	&__sub-item {
+		height: 64px;
+		display: flex;
+		align-items: center;
+
+		@include mixins.responsive( min, sm-mobile ) {
+			font-size: 14px;
+			height: 3rem;
+		}
+
+		& > a {
+			@include mixins.font("Inter", 500, 18px, 133%);
+			color: variables.$lynch;
+			@include mixins.responsive( min, sm-mobile ) {
+				font-size: 14px;
+			}
+		}
+	}
+
+	&__link {
+		color: variables.$downriver;
+		width: 100%;
+		height: 100%;
+		padding-left: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		&--grey {
+			color: variables.$lynch;
+		}
+	}
+
+	&__arrow {
+		margin-left: auto;
+		margin-right: 5px;
+		width: 0.875rem;
+		height: auto;
+	}
+
+	&__flag {
+		margin-right: 16px;
+	}
+
+	&--shown {
+		visibility: visible;
+		top: 66px;
+		transition: top 250ms ease-out;
+
+		@include mixins.responsive( min, sm-mobile ) {
+			top: 58px;
+		}
+	}
+
+	&--hidden {
+		visibility: hidden;
+		top: -100%;
+		transition: top 500ms ease-out, visibility 500ms ease-out;
+	}
+}

@@ -1,0 +1,20 @@
+.socials{
+    display: flex;
+    justify-content: space-between ;
+    height: 24px;
+    margin-top: 32px;
+    
+
+    & > img {
+        background-color: white;
+        border-radius: 50%;
+        
+    }
+
+    @media (max-width: 890px){
+        display: none;
+    }
+
+    
+
+}

@@ -1,0 +1,129 @@
+@use "sass:list";
+@use "sass:string";
+@use "variables";
+
+@use "sass:map";
+@use "sass:meta";
+
+
+@function str-replace($string, $search, $replace: "") {
+  $index: string.index($string, $search);
+
+  @if $index {
+    @return string.slice($string, 1, $index - 1) + $replace + str-replace(string.slice($string, $index + string.length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg, $range) {
+  $src: null;
+
+  $extmods: (
+          eot: "?",
+          svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+          otf: "opentype",
+          ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map.has-key($extmods, $ext), $ext + map.get($extmods, $ext), $ext);
+    $format: if(map.has-key($formats, $ext), map.get($formats, $ext), $ext);
+    $src: list.append($src, url( quote($path + "." + $extmod) ) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: string.quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+    font-display: swap;
+    unicode-range: $range;
+  }
+}
+
+@mixin font($family, $weight, $size, $height) {
+  font-family: $family;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin responsive($min: null, $max: null) {
+  @if ($min == null or ($min != min and map.has-key(variables.$breakpoints, $min) == false)) {
+    @error "The $min argument has to be either `min` or one of " + variables.$breakpoint-list;
+  }
+  @else if ($min == min and ($max == null or $max == max)) {
+    @error "This responsive call doesn't specify any breakpoint ...";
+  }
+  @else {
+    @if ($min == min) {
+      @if (map.has-key(variables.$breakpoints, $max) == false) {
+        @error "#{$max} breakpoint doesn't exist";
+      }
+      $max-bp: map.get(variables.$breakpoints, $max);
+      @media only screen and (max-width: map.get($max-bp, "max")) {
+        @content;
+      }
+    }
+    @else if ($max == max) {
+      @if (map.has-key(variables.$breakpoints, $min) == false) {
+        @error "#{$min} breakpoint doesn't exist";
+      }
+      $min-bp: map.get(variables.$breakpoints, $min);
+      @media only screen and (min-width: map.get($min-bp, "min")) {
+        @content;
+      }
+    }
+    @else if ($max == null) {
+      $bp: map.get(variables.$breakpoints, $min);
+      @if (map.has-key($bp, "min") == false) {
+        @media only screen and (max-width: map.get($bp, "max")) {
+          @content;
+        }
+      }
+      @else if (map.has-key($bp, "max") == false){
+        @media only screen and (min-width: map.get($bp, "min")) {
+          @content;
+        }
+      }
+      @else {
+        @media only screen and (min-width: map.get($bp, "min")) and (max-width: map.get($bp, "max")) {
+          @content;
+        }
+      }
+    }
+    @else {
+      @if (map.has-key(variables.$breakpoints, $min) == false) {
+        @error "#{$min} breakpoint doesn't exist";
+      }
+      @if (map.has-key(variables.$breakpoints, $max) == false) {
+        @error "#{$max} breakpoint doesn't exist";
+      }
+      $min-bp: map.get(variables.$breakpoints, $min);
+      $max-bp: map.get(variables.$breakpoints, $max);
+      @if (map.has-key($min-bp, "min") == false) {
+        @error "#{$min} doesn't have a min-width, use `min` instead";
+      }
+      @if (map.has-key($max-bp, "max") == false) {
+        @error "#{$max} doesn't have a max-width, use `max` instead";
+      }
+      @if (map.get($min-bp, "min") >= map.get($max-bp, "max")) {
+        @error "#{$min}'s min-width is superior to #{$max}'s max-width";
+      }
+      @media only screen and (min-width: map.get($min-bp, "min")) and (max-width: map.get($max-bp, "max")) {
+        @content;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@use "../utils/mixins";
+
+@include mixins.font-face("Mont", '../../../public/fonts/mont-heavy.subset', 800, normal, woff2, "U+20-22,U+26,U+27,U+2C-2F,U+3A,U+3F,U+42-49,U+4C-50,U+52-54,U+56,U+57,U+59,U+61-7A,U+BF,U+E0,U+E1,U+E8,U+E9,U+ED,U+F3,U+F9,U+FA,U+2019");
+@include mixins.font-face("Mont", '../../../public/fonts/mont-bold.subset', 700, normal, woff2, "U+20-22,U+26,U+27,U+2C-2F,U+3A,U+3F,U+42-49,U+4C-50,U+52-54,U+56,U+57,U+59,U+61-7A,U+BF,U+E0,U+E1,U+E8,U+E9,U+ED,U+F3,U+F9,U+FA,U+2019");
+@include mixins.font-face("Mont", '../../../public/fonts/mont-regular.subset', 400, normal, woff2, "U+20-22,U+26,U+27,U+2C-2F,U+3A,U+3F,U+42-49,U+4C-50,U+52-54,U+56,U+57,U+59,U+61-7A,U+BF,U+E0,U+E1,U+E8,U+E9,U+ED,U+F3,U+F9,U+FA,U+2019");
+
+@include mixins.font-face("Inter", '../../../public/fonts/inter-bold.subset', 700, normal, woff2, "U+9,U+A,U+20-22,U+25-29,U+2B-35,U+37-3A,U+3F,U+41-57,U+59,U+5A,U+61-7A,U+A9,U+BF,U+C7,U+C9,U+DA,U+E0-E2,U+E7-EA,U+ED,U+F1,U+F3,U+F4,U+F9-FB,U+2019,U+201C,U+201D,U+2026,U+20AC,U+2192");
+@include mixins.font-face("Inter", '../../../public/fonts/inter-semibold.subset', 600, normal, woff2, "U+9,U+A,U+20-22,U+25-29,U+2B-35,U+37-3A,U+3F,U+41-57,U+59,U+5A,U+61-7A,U+A9,U+BF,U+C7,U+C9,U+DA,U+E0-E2,U+E7-EA,U+ED,U+F1,U+F3,U+F4,U+F9-FB,U+2019,U+201C,U+201D,U+2026,U+20AC,U+2192");
+@include mixins.font-face("Inter", '../../../public/fonts/inter-medium.subset', 500, normal, woff2, "U+9,U+A,U+20-22,U+25-29,U+2B-35,U+37-3A,U+3F,U+41-57,U+59,U+5A,U+61-7A,U+A9,U+BF,U+C7,U+C9,U+DA,U+E0-E2,U+E7-EA,U+ED,U+F1,U+F3,U+F4,U+F9-FB,U+2019,U+201C,U+201D,U+2026,U+20AC,U+2192");
+@include mixins.font-face("Inter", '../../../public/fonts/inter-regular.subset', 400, normal, woff2, "U+9,U+A,U+20-22,U+25-29,U+2B-35,U+37-3A,U+3F,U+41-57,U+59,U+5A,U+61-7A,U+A9,U+BF,U+C7,U+C9,U+DA,U+E0-E2,U+E7-EA,U+ED,U+F1,U+F3,U+F4,U+F9-FB,U+2019,U+201C,U+201D,U+2026,U+20AC,U+2192");
+@include mixins.font-face("Inter", '../../../public/fonts/inter-light.subset', 300, normal, woff2, "U+9,U+A,U+20-22,U+25-29,U+2B-35,U+37-3A,U+3F,U+41-57,U+59,U+5A,U+61-7A,U+A9,U+BF,U+C7,U+C9,U+DA,U+E0-E2,U+E7-EA,U+ED,U+F1,U+F3,U+F4,U+F9-FB,U+2019,U+201C,U+201D,U+2026,U+20AC,U+2192");

@@ -1,0 +1,48 @@
+// ---------------------------------
+// ------ IMPORT OF UTILS ----------
+// ---------------------------------
+
+@use "utils/mixins";
+@use "utils/variables";
+
+// ---------------------------------
+// ------ IMPORT OF VENDORS --------
+// ---------------------------------
+
+
+// ---------------------------------
+// ------ IMPORT OF BASES ----------
+// ---------------------------------
+@use 'base/reset';
+@use 'base/fonts';
+
+// ---------------------------------
+// ------ IMPORT OF MOLECULES ------
+// ---------------------------------
+
+@use "modules/molecules/navbar";
+@use "modules/molecules/socials";
+@use "modules/molecules/footer";
+@use "modules/molecules/burger-menu";
+
+@use "modules/atoms/button";
+
+@use "modules/organisms/hero";
+@use "modules/organisms/fleur";
+@use "modules/organisms/secure";
+@use "modules/organisms/checkList";
+@use "modules/organisms/product";
+
+// ---------------------------------
+// ------ IMPORT OF LAYOUTS --------
+// ---------------------------------
+
+
+// ---------------------------------
+// ------ IMPORT OF PAGES ----------
+// ---------------------------------
+
+
+// ---------------------------------
+// ------ IMPORT OF THEMES ---------
+// ---------------------------------

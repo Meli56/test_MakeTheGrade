@@ -1,0 +1,128 @@
+@use "../../utils/mixins";
+@use "../../utils/variables";
+
+
+
+
+
+.footer {
+	
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	text-align: center;
+	
+
+	&__footer-responsive{
+		text-align: center; 
+		margin-top: 345px;
+
+		@media (max-width: 320px){
+			margin-top: 165px;
+		}
+	}
+
+
+	&__cadre{
+		text-align: start;
+		margin: 0px 50px 0px 0px;
+	}
+
+	&__input-email{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50%;
+		margin: 50px 0px 75px 0px;
+		box-shadow: 10px 5px 5px #D2D3DA;
+	}
+
+	&__block{
+		height: 100px;
+		display: flex;
+		justify-content: center;
+		margin: 0 25px 0 25px;
+
+		& > div {
+			width: 190px;
+		}
+		@media (max-width: 320px) { 
+			& > div {
+				display: none;
+			}
+		 }
+		
+	}
+	
+	
+	&__getStarted-btn {
+		font-size: 12px;
+		display: flex;
+		flex: 1 1;
+		background: #4C9FFE;
+		border: none;
+   		text-align: center;
+		padding: 22px 0px 30px 10px;
+		
+		color: #ffffff;
+		border-radius: 2px;
+		height: 60px;
+		width: 500px;
+		
+		
+	
+		background: rgb(2,0,36);
+		background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(148,154,203,1) 0%, rgba(120,205,236,1) 94%);
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		
+		
+		&:hover {
+		  background: #cecece;
+		  cursor: pointer;
+		}
+
+		@media (max-width:1500px){
+			padding: 15px 10px 15px 10px;
+		}
+	  }
+	
+	  &__formular {
+		display: flex;
+		flex: 7 1 ;
+		border: none;
+		border-radius: 2px;
+		padding: 12px;
+		width: 500px;
+		color: #868686;
+		
+		
+		font-size: 15px;
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	
+			
+	
+	  }
+
+
+
+	&__liste{
+		font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+		margin-bottom: 11px;
+		font-size: 12px;
+		color: #8B929E;
+	}
+
+	&__titre{
+		font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		margin-bottom: 20px;
+		font-weight: bold;
+		font-size: 13px;
+		color: #3D4665;
+	}
+
+
+	&__invision{
+		width: 50px;
+		height: 20px;
+	}
+}

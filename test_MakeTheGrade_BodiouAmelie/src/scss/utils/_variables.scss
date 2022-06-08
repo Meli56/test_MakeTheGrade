@@ -1,0 +1,34 @@
+@use "sass:map";
+
+$picton-blue: #2FCBEB;
+$curious-blue: #289CC9;
+$denim-blue: #177CBD;
+$chathams-blue: #124F7E;
+$dodger-blue: #1DBBFF;
+$downriver: #0B2742;
+$ghost: #C9CED6;
+$regent-grey: #8A96A8;
+$lynch: #60708A;
+$mystic: #E1E6EE;
+$aqua-haze: #ECF2F4;
+$light-grey: #F1F6FB;
+$frost: #EDF2F6;
+$marin-blue: #2b2344;
+
+$grey: black;
+$primary-color: #0B2742;
+$secondary-color: #2b2344;
+
+// Breakpoints
+
+$breakpoints : (
+        sm-mobile : ("max" : 319.9px),
+        mobile: ("min": 320px, "max": 479.9px),
+        tablet: ("min": 480px, "max": 767.9px),
+        sm-laptop: ("min": 768px, "max": 895.9px),
+        laptop: ("min": 896px, "max": 1023.9px),
+        desktop: ("min": 1024px, "max": 1199.9px),
+        lg-desktop: ("min": 1200px)
+);
+
+$breakpoint-list: "[sm-mobile, mobile, tablet, laptop, desktop, lg-desktop]";
