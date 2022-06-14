@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="fr">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meril</title>
+    <link rel="icon" href="./public/img/icon.jpg" width="25px"/>
+    
+    <link href="./bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dist/css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    
+</head>
+<body>
+
+<header>
+    <!-- Navbar -->
+    <nav class="navbar" style="z-index: 8000; background-color:white">
+        <a class="navbar__logo" href="/">
+            <img src="./public/img/logo.jpg" style="width: 80px" id="navbarLogo" alt="logo" />
+        </a>
+        <ul class="navbar__menu">
+            <a href="/" class="navbar__menu-item navbar__menu-item--active">
+                <span>Home</span>
+            </a>
+            <a href="/" class="navbar__menu-item">
+                <span>About us</span>
+            </a>
+            <a href="/" class="navbar__menu-item">
+                <span>Features</span>
+            </a>
+
+            <a href="/" class="navbar__menu-item">
+                <span>Fees</span>
+            </a>
+
+            <a href="/" class="navbar__menu-item">
+                <span>Contact us</span>
+            </a>
+            
+        </ul>
+        <div class=" "style="display: flex;">
+            <button class=" navbar__buttons hero__start-btn" ><b>START FREE TRIAL</b></button>
+            <button class="navbar__buttons hero__iconSearch-btn" ><i class="fa fa-search"></i></button>
+        </div>
+
+
+        <input id="burger-menu" class="burger-menu__input" type="checkbox" >
+        <label for="burger-menu" class="navbar__burger burger-menu">
+            <span class="burger-menu__top-span"></span>
+            <span class="burger-menu__bottom-span"></span>
+        </label>
+    </nav>
+
+    <div class="mobile-nav mobile-nav--hidden">  
+            
+        <ul class="mobile-nav__menu">
+            <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="/"><span>Home</span></a>
+            </li>
+            <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="/">About us</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="/">Features</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="/">Fees</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="/">Contact us</a>
+            </li>
+        </ul>
+    </div>
+    
+</header>
+
+<!-- Premiere partie  -->
+<div class="hero">
+    <div class="hero__section" >       
+        <div class="hero__img-container">
+            <div class="hero__responsiveTitle" >
+
+                <!-- Le texte  -->
+                <p class="hero__titleSecon">Secure, Scalable And Supported</p>
+                <p class="hero__title">Beautiful & Intuitive</p>
+
+                <!-- Le bouton  -->
+                <button class="hero__search-btn" ><b>START FREE TRIAL</b></button>
+            </div>
+
+            <!-- L'image  -->
+            <div class="hero__img-container">
+                <img src="./public/img/img1.jpg" alt="img1">
+            </div>
+        </div>
+   </div>
+</div>
+
+<!-- Deuxieme partie  -->
+<div clas="row col-sm-2">
+    <div class="product ">
+        <div class="product__section" >
+            <div class="product__img-container">
+
+                <!-- Le titre  -->
+                <div  style="text-align: center; align-items: center;">
+                    <p class="product__ourProduct" >Our Product</p>  
+                </div>
+
+                <!-- Le trait  -->
+                <div>
+                    <img style="padding: 0px 0px 20px 0px;" src="./public/img/trait.jpg" alt="">
+                </div>
+
+                <!-- Bloc qui contient trois cadre  -->
+                <div class="product__block">      
+                    
+                    <!-- Premier cadre  -->
+                    <div class="product__cadre">
+                        <!-- L'image  -->
+                        <div class="product__img-container">
+                            <img src="./public/img/product-bleu.jpg" alt="bleu">
+                        </div>
+
+                        <!-- Le texte  -->
+                        <p class="product__titreProd">Asset Management</p>
+                        <p class="product__listeProd">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>                  
+                        <a class="product__listeProd" style="color:#72A7DF; text-decoration: underline;" href="/">learn more...</a>
+                    </div>
+
+                    <!-- Deuxieme cadre  -->
+                    <div class="product__cadre">
+                        <!-- L'image  -->
+                        <div class="product__img-container">
+                            <img src="./public/img/product-jaune.jpg" alt="bleu">
+                        </div>
+
+                        <!-- Le texte  -->
+                        <p class="product__titreProd">Dashboard</p>
+                        <p class="product__listeProd">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>                  
+                        <a class="product__listeProd" style="color:#72A7DF; text-decoration: underline; ;" href="/">learn more...</a>
+                    </div>
+
+                    <!-- Le troisieme cadre  -->
+                    <div class="product__cadre">
+                        <!-- L'image  -->
+                        <div class="product__img-container">
+                            <img src="./public/img/product-marron.jpg" alt="bleu">
+                        </div>
+
+                        <!-- Le texte  -->
+                        <p class="product__titreProd">User management</p>
+                        <p class="product__listeProd">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>                  
+                        <a class="product__listeProd" style="color:#72A7DF; text-decoration: underline;" href="/">learn more...</a>
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Troisieme partie  -->
+<div class="checkList">
+    <div class="checkList__section" >
+        <div class="checkList__img-container">
+            <!-- L'image  -->
+            <img src="./public/img/list2.jpg" alt="list">
+
+            <!-- Le bloc qui contient le cadre -->
+            <div class="checkList__block">
+                <!-- Le cadre avec les 4 points de texte  -->
+                <div class="checkList__cadre" >                                         
+                    <img class="socials" src="./public/img/check.jpg" alt="check" style="padding-left: 30px;">
+                    <p class="checkList__titreProd">Asset Management</p>
+                    <p class="checkList__listeProd">Best in class asset management comes standard</p>
+                    
+                                                            
+                    <img class="socials" src="./public/img/check.jpg" alt="check" style="padding-left: 30px;">
+                    <p class="checkList__titreProd">User Management</p>
+                    <p class="checkList__listeProd">Define user groups, and optionally allow public user registration</p>
+
+                    <img class="socials" src="./public/img/check.jpg" alt="check" style="padding-left: 30px;">
+                    <p class="checkList__titreProd">Dashboardt</p>
+                    <p class="checkList__listeProd">Bug fixes, and security enhancements with one-click updating.</p>
+
+                    <img class="socials" src="./public/img/check.jpg" alt="check" style="padding-left: 30px;">
+                    <p class="checkList__titreProd">Account Management</p>
+                    <p class="checkList__listeProd">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quatrieme partie -->
+<div class="secure">
+    <div class="secure__section">
+        <!-- L'image  -->
+        <div class="secure__img-container">
+            <div class="secure__img"><img src="./public/img/5images.jpg" alt=""></div>  
+        </div>
+
+        <!-- Le texte  -->
+        <div class="secure__responsiveTitle" >
+            <div class="secure__content">   
+                <p class="secure__title">Secure, Scalable And Supported</p>
+                <p class="secure__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                <!-- Le bouton  -->
+                <button class="secure__search-btn" ><b>START FREE TRIAL</b></button>                                  
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cinquieme partie  -->
+<div class="checkList">
+    <div class="checkList__section" >
+        <!-- L'image  -->
+        <div class="checkList__img-container"  >
+            <img class="checkList__beautiful-img" src="./public/img/beautiful.jpg" alt="beautiful">
+        </div>
+    </div>
+</div>
+
+
+<!-- Sixieme partie  -->
+<div class="fleur">
+    <div class="fleur__section">     
+        <!-- Le texte  -->  
+        <div class="fleur__content-container fleur__responsiveTitle">
+            
+            <div class="fleur__content">   
+                <p class="fleur__title">Meril has everything you need to bring ideas to life and transform how you create digital products. Placing the power of design in everyone's hands</p>
+                <img src="./public/img/invison.jpg" alt="">                     
+            </div>
+        </div>
+
+        <!-- L'image  -->
+        <div class="fleur__img-container">
+            <div class="fleur__img"><img src="./public/img/fleur.jpg" alt=""></div>  
+        </div>
+    </div>
+</div>
+
+<div id="menu-overlay" class="overlay--menu-hidden"></div>
+
+<!-- Le footer  -->
+<footer class="col-sm-2 footer__footer-responsive" >
+    <!-- Le texte  -->
+    <h1 style="font-size:50px; color: #3D3D3D">ready to get started?</h1></br>
+    <div class="footer">
+        <!-- L'input et le bouton'  -->
+        <div class="footer__input-email">
+             <input class="footer__formular" type="textarea" placeholder="Write Your Email" />
+             <button class="footer__getStarted-btn"><b>GET STARTED</b></button>
+        </div>
+       
+    </div>
+
+    <!-- Le bloc qui  -->
+    <div class="footer footer__block" >
+        
+            <div style="text-align: start; margin-right: 100px;">
+                <img class="titre" src="./public/img/logo.jpg" width="80px" style="margin: -15px 0px 50px 0px;"></img>
+                <p class="footer__liste">2018 © All rights reserved</p>
+                <div class="socials" >
+                    <img src="./public/img/facebook.png" alt="facebook" >
+                    <img src="./public/img/g.png" alt="googleP" >
+                    <img src="./public/img/twitter.png" alt="twitter" >
+                    <img src="./public/img/youtube.png" alt="youtube" >
+                </div>
+            </div>
+            <div class="footer__cadre">
+                <!-- Changer les balises p en a -->
+                <p class="footer__titre">COMPANY</p>
+                <a class="footer__liste" href="/">About</a><br>
+                <a class="footer__liste" href="/">Security & Privacy</a><br>
+                <a class="footer__liste" href="/">Careers</a><br>
+                <a class="footer__liste" href="/">Blog</a><br>
+            </div>
+
+            <div class="footer__cadre">
+                <p class="footer__titre">PRODUCT</p>
+                <a class="footer__liste" href="/">Features</a><br>
+                <a class="footer__liste" href="/">Explore</a><br>
+                <a class="footer__liste" href="/">Pricing</a><br>
+                <a class="footer__liste" href="/">Apps</a><br>
+                <a class="footer__liste" href="/">For IOS</a><br>
+            </div>
+
+            <div class="footer__cadre">
+                <p class="footer__titre">ABOUT</p>
+                <a class="footer__liste" href="/">Stories</a><br>
+                <a class="footer__liste" href="/">About US</a><br>
+                <a class="footer__liste" href="/">Blog</a><br>
+                <a class="footer__liste" href="/">Careers</a><br>
+            </div>
+
+            <div style="text-align: start;">
+                <p class="footer__titre">BITS</p>
+                <a class="footer__liste" href="/">Help Center</a>
+                <a class="footer__liste" href="/">Enterprise</a>
+                <a class="footer__liste" href="/">Terms of Service</a>
+                <a class="footer__liste" href="/">Privacy</a>
+                <a class="footer__liste" href="/">Security</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="./src/js/lib/auto_width.js"></script>
+<script type="text/javascript" src="./src/js/lib/navbar.js"></script>
+</body>
+</html>
